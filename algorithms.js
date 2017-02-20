@@ -11,10 +11,7 @@ What is the general rule for binary numbers which are or the form 2^n or 2^n - 1
 
 
 
-
-
 // Arrays interveiw questions;
-
 
 var filterNum = function(arr) {
   var newArr =[];
@@ -66,3 +63,65 @@ var timesNums = function (arr) {
 
 timesNums([1, 3, 9, 4])
 
+
+
+//linked list 
+
+// Write an algorithm to find the middle element of a linked list without using the .length property
+var head = { value: 4, next: { value: 5, next: {value: 6, next: {value: 3, next: null }}}}
+function findMiddle(head) {
+  var length = 1;
+  var node = head; 
+  while (node.next) {
+    node = node.next;
+    length ++
+  }
+  console.log(length)
+  node = head;
+  for (var i = 0; i < length/2; i++) {
+    node = node.next;
+  }
+  return node;
+}
+findMiddle(head)
+
+// Write an algorithm to find the third element from the end of a linked list without using the .length property
+
+var head = { value: 4, next: { value: 5, next: {value: 6, next: {value: 3, next: null }}}}
+function findThird(head) {
+  var length = 1;
+  var node = head; 
+  while (node.next) {
+    node = node.next;
+    length ++
+  }
+  console.log(length)
+  node = head;
+  for (var i = 0; i < length-3; i++) {
+    node = node.next;
+  }
+  return node;
+}
+findThird(head)
+
+// Write an algorithm to reverse a linked list
+
+var head = { value: 4, next: { value: 5, next: {value: 6, next: {value: 3, next: null }}}}
+
+function reverse(head) {
+  var length = 1;
+  var node = head.next;
+  var before = head;
+  // before is the last one now, so before.next = null;
+  before.next = null;
+  while (node.next) {
+    // head will equal null;
+    var next  = node.next;
+    node.next = before; 
+    before = node;
+    node = next;
+  }
+  node.next = before;
+  return node
+}
+reverse(head)

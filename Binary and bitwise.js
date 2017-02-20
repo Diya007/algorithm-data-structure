@@ -3,6 +3,10 @@
 // following the algorithm described above. Hint: to invert the bits of a number you can use the "~" operator.
 //  For example ~25 will invert the bits of the integer 25.
 
+// x="11111111111111111111111111111010"
+// convert to decimal, invert bits and include the - signal
+// -~parseInt(x,2) // == -5
+
 function twosComplement (int) {
 	if (int >= 0) {
 		return (~int+1 >>> 0).toString(2)
