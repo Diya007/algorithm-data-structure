@@ -86,7 +86,6 @@ function findMiddle(head) {
 findMiddle(head)
 
 // Write an algorithm to find the third element from the end of a linked list without using the .length property
-
 var head = { value: 4, next: { value: 5, next: {value: 6, next: {value: 3, next: null }}}}
 function findThird(head) {
   var length = 1;
